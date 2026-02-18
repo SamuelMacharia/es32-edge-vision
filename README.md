@@ -24,6 +24,8 @@ The goal is a **modular, scalable system** capable of handling multiple cameras,
 ## Features
 
 - Real-time video streaming from ESP32-CAM  
+- Ultrasonic object detection with HC-SR04  
+- UART-based communication to send uart wakeup signal when motion/object is detected  
 - Modular FreeRTOS architecture (capture, stream, power management)  
 - Queue-based frame buffer to prevent lost frames  
 - MQTT-based communication and notifications
