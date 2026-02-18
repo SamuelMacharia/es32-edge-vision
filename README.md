@@ -26,6 +26,7 @@ The goal is a **modular, scalable system** capable of handling multiple cameras,
 - Real-time video streaming from ESP32-CAM  
 - Modular FreeRTOS architecture (capture, stream, power management)  
 - Queue-based frame buffer to prevent lost frames  
+- MQTT-based communication and notifications
 - Event group flags to synchronize WiFi, streaming, and capture  
 - Python-based face detection and recognition using YOLOv8n-face  
 - ONNX export for optimized inference  
@@ -54,7 +55,7 @@ The goal is a **modular, scalable system** capable of handling multiple cameras,
 - **PSRAM** for higher resolution frames  
 - Arduino Uno (for motion detection / sensors)  
 - Optional: Level shifter for UART wakeup  
-- PC / server for AI processing  
+- Server for AI processing  
 
 ---
 
@@ -65,8 +66,8 @@ The goal is a **modular, scalable system** capable of handling multiple cameras,
 1. Install **ESP-IDF** and set up your environment  
 2. Clone the repository:  
    ```bash
-   git clone https://github.com/SamuelMacharia/esp32-ai.git
-   cd esp32-ai/esp_32
+   git clone https://github.com/SamuelMacharia/esp32-edge-vision.git
+   cd esp32-edge-ai/face_recognition
 3. Configure WiFi in menuconfig (`CONFIG_WIFI_SSID` & `CONFIG_WIFI_PASSWORD`)
 
 4. Build and flash:
@@ -88,8 +89,8 @@ The goal is a **modular, scalable system** capable of handling multiple cameras,
     ```
 2. Create and activate a Python virtual environment:
     ```bash
-    python -m venv env
-    source env/bin/activate
+    python -m venv venv
+    source venv/bin/activate
     ```
 3. Install dependencies:
     ```bash
