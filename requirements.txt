@@ -1,0 +1,6 @@
+imutils==0.5.4
+Pillow==12.1.1
+pytest==9.0.2
+pytest_embedded_idf==2.6.0
+pytest_embedded_qemu==2.6.0
+ultralytics==8.4.14
