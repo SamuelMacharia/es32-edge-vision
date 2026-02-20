@@ -31,7 +31,13 @@ esp_err_t startWebServer(){
         server= NULL;
         return err;
     }
-    httpd_register_uri_handler(server, &stream_uri);
+    err = httpd_register_uri_handler(server, &stream_uri);
+    if(err != ESP_OK){
+        ESP_LOGI(TAG, "Failed to register Stream_URI", esp_err_to_name(err));
+        httpd_stop(server);
+        server = NULL;
+        return err;
+    }
     ESP_LOGI(TAG, "Web Server Started Successfully");
     return ESP_OK;
 }

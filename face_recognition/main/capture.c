@@ -63,7 +63,8 @@ void handle_capture(void* args){
        if(!fb){
         ESP_LOGE(TAG, "Camera Capture Failed");
         
-        break;
+        vTaskDelay(pdMS_TO_TICKS(50));
+        continue;
        }else{
         if(xQueueSend(xFrameQueue, &fb, portMAX_DELAY) != pdPASS){
             esp_camera_fb_return(fb);
