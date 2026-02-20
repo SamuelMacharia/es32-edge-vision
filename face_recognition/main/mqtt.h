@@ -9,7 +9,7 @@
 #include "mqtt_client.h"
 #include "event_groups.h"
 #include "wifi.h"
-#include "power.h"\
+#include "power.h"
 
 
 esp_err_t mqtt_start(void);

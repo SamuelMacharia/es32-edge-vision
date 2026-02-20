@@ -69,7 +69,7 @@ void handle_stream(void* args){
     while(httpd_req_to_sockfd(req)>=0){
         if(xQueueReceive(xFrameQueue, &recieved_fb, portMAX_DELAY)==pdTRUE){          
             if(res != ESP_OK){
-                ESP_LOGE(TAG, "Something happened %s", res);
+                ESP_LOGE(TAG, "Streaming failed with error code %s", esp_err_to_name(res));
                 break;
             }
 
